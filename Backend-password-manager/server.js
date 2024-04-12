@@ -17,7 +17,14 @@ const dbName = 'passop';
 
 app.use(bodyparser.json())
 
-app.use(cors())
+app.use(cors(
+  {
+    origin:["https://priyansh-password-manager.vercel.app"],
+    methods:["GET","POST"],
+    credentials:true
+  }
+))
+
 
 client.connect();
 
